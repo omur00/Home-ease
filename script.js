@@ -1,47 +1,46 @@
 document.addEventListener("DOMContentLoaded", () => {
   const gallery = document.getElementById("imageGallery");
 
-  // 1. Generate 26 Images with Lazy Loading
+  // 1. Optimized Gallery Loading
   const fragment = document.createDocumentFragment();
   for (let i = 1; i <= 26; i++) {
     const img = document.createElement("img");
     img.src = `assets/${i}.jpg`;
-    img.alt = `HomeEase Interface ${i}`;
+    img.alt = `UI Perspective ${i}`;
     img.loading = "lazy";
-    img.classList.add("reveal"); // Prepare for scroll animation
     fragment.appendChild(img);
   }
   gallery.appendChild(fragment);
 
-  // 2. Intersection Observer for Scroll Effects
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: "0px 0px -50px 0px",
-  };
-
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry, index) => {
+  // 2. Scroll Reveal Observer
+  const revealCallback = (entries) => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        // Add a slight stagger delay for gallery images
-        if (entry.target.tagName === "IMG") {
-          entry.target.style.transitionDelay = `${(index % 5) * 0.1}s`;
-        }
         entry.target.classList.add("active");
-        revealObserver.unobserve(entry.target);
       }
     });
-  }, observerOptions);
+  };
 
-  // Observe Bento Items and Gallery Images
-  document
-    .querySelectorAll(".bento-item, .image-grid img, .gallery-header")
-    .forEach((el) => {
-      el.classList.add("reveal");
-      revealObserver.observe(el);
+  const observer = new IntersectionObserver(revealCallback, {
+    threshold: 0.1,
+  });
+
+  // Apply reveal class to all major sections
+  const elementsToReveal = document.querySelectorAll(
+    ".bento-item, .hero, .image-grid img",
+  );
+  elementsToReveal.forEach((el) => {
+    el.classList.add("reveal");
+    observer.observe(el);
+  });
+
+  // 3. Smooth Nav Scroll
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute("href")).scrollIntoView({
+        behavior: "smooth",
+      });
     });
-
-  // 3. Lucide Icons re-init (if dynamic)
-  if (window.lucide) {
-    window.lucide.createIcons();
-  }
+  });
 });
