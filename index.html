@@ -1,51 +1,105 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HomeEase - Home Services App</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <h1 class="fade-in">Welcome to HomeEase</h1>
-        <p class="fade-in">Your one-stop solution for all home services</p>
-    </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HomeEase | Premium Home Intelligence</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body>
+    <nav class="glass-nav">
+      <div class="logo">HomeEase<span>.</span></div>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#gallery">Interface</a>
+        <button class="btn-primary">Get App</button>
+      </div>
+    </nav>
 
-    <section class="intro fade-in">
-        <div class="content">
-            <h2>About HomeEase</h2>
-            <p>HomeEase is an innovative app that simplifies home service bookings. Whether you need an electrician, plumber, or want to hire employees, HomeEase makes it seamless.</p>
-            <p>Book services through our interactive calendar, set locations via Google Maps, and track your bookings in real-time.</p>
+    <main>
+      <header class="hero">
+        <div class="hero-badge">v2.0 Neural Update</div>
+        <h1 class="gradient-text">Your Home.<br />Managed.</h1>
+        <p class="hero-subtext">
+          The 2026 standard for elite service booking. Seamlessly connect with
+          vetted professionals through a unified spatial interface.
+        </p>
+        <div class="hero-btns">
+          <button class="btn-primary">Book Now</button>
+          <button class="btn-secondary">Watch Demo</button>
         </div>
-        <div class="image-container zoom-in">
-            <img src="assets/prev.jpg" alt="HomeEase App Preview">
-        </div>
-    </section>
+      </header>
 
-    <section class="features fade-in">
-        <h2>App Features</h2>
-        <div class="grid">
-            <div class="card bounce">📅 Calendar-based booking</div>
-            <div class="card bounce">📍 Google Maps address selection</div>
-            <div class="card bounce">🛠️ Multiple home services</div>
-            <div class="card bounce">👥 Employee hiring</div>
-            <div class="card bounce">🔄 Real-time booking updates</div>
-            <div class="card bounce">🛡️ Secure authentication with Clerk</div>
-            <div class="card bounce">⚙️ Admin panel for management</div>
-            <div class="card bounce">🚀 Fast and user-friendly</div>
-        </div>
-    </section>
+      <section id="features" class="bento-container">
+        <div class="bento-grid">
+          <div class="bento-item large-card">
+            <div class="bento-content">
+              <i data-lucide="zap"></i>
+              <h2>Instant Matching</h2>
+              <p>
+                Our 2026 engine matches you with local pros in under 30 seconds
+                based on real-time availability.
+              </p>
+            </div>
+            <img src="assets/prev.jpg" alt="App Preview" class="bento-img" />
+          </div>
 
-    <section class="gallery fade-in">
-        <h2>App Screenshots</h2>
+          <div class="bento-item">
+            <i data-lucide="calendar"></i>
+            <h3>Smart Sync</h3>
+            <p>Interactive calendar booking with auto-rescheduling.</p>
+          </div>
+
+          <div class="bento-item">
+            <i data-lucide="map-pin"></i>
+            <h3>Precision GPS</h3>
+            <p>Live tracking powered by Google Maps high-res API.</p>
+          </div>
+
+          <div class="bento-item wide-card">
+            <div class="flex-row">
+              <i data-lucide="shield-check"></i>
+              <div>
+                <h3>Clerk™ Secured</h3>
+                <p>
+                  Enterprise-grade biometric authentication and encrypted data
+                  vault for every user.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bento-item">
+            <i data-lucide="users"></i>
+            <h3>Team Hub</h3>
+            <p>Manage multiple employees and home staff in one view.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery" class="gallery-section">
+        <div class="gallery-header">
+          <h2>The Interface</h2>
+          <p>26 views of pure functional design.</p>
+        </div>
         <div class="image-grid" id="imageGallery"></div>
-    </section>
+      </section>
+    </main>
 
     <footer>
-        <p>© 2025 HomeEase. All rights reserved.</p>
+      <div class="footer-grid">
+        <p>© 2026 HomeEase Inc. High-fidelity home management.</p>
+        <div class="social-links">
+          <i data-lucide="twitter"></i>
+          <i data-lucide="framer"></i>
+        </div>
+      </div>
     </footer>
 
     <script src="script.js"></script>
-</body>
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
 </html>
