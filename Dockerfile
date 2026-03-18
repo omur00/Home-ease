@@ -1,8 +1,9 @@
 FROM nginx:alpine
 
-# 2. Copy your files (index.html, styles.css, images, etc.)
-# into the folder Nginx uses to serve content
+# Use a clean slate
+RUN rm -rf /usr/share/nginx/html/*
+
+# Copy everything from current directory into the Nginx folder
 COPY . /usr/share/nginx/html
 
-# 3. Nginx uses port 80 by default
 EXPOSE 80
